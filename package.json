@@ -2,7 +2,32 @@
   "name": "arabic-book-corpus-platform",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "description": "Standalone OCR-first Arabic book corpus platform with citation-grade search APIs",
+  "keywords": [
+    "arabic",
+    "arabic-ocr",
+    "corpus",
+    "digital-humanities",
+    "search",
+    "citation",
+    "fastify",
+    "bullmq",
+    "postgres",
+    "minio"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lAvArt/arabic-book-corpus-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lAvArt/arabic-book-corpus-platform/issues"
+  },
+  "homepage": "https://github.com/lAvArt/arabic-book-corpus-platform#readme",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.6.2"
+  },
   "packageManager": "pnpm@10.6.2",
   "scripts": {
     "build": "turbo run build",

@@ -81,6 +81,19 @@ export interface PassageToken {
   charEnd: number;
 }
 
+export interface PageDetail {
+  id: UUID;
+  volumeId: UUID;
+  pageNumber: number;
+  storagePath: string;
+  imageSha256: string;
+  volumeNumber: number;
+  editionId: UUID;
+  editionName: string;
+  sourceId: UUID;
+  sourceTitle: string;
+}
+
 export interface ApiKeyResponse {
   keyId: UUID;
   keyPrefix: string;

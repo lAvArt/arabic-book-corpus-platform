@@ -13,6 +13,7 @@ export async function updateStageStatus(params: {
   pageId?: string;
   error?: string | null;
 }): Promise<void> {
+  const coalescePageId = params.pageId ?? "00000000-0000-0000-0000-000000000000";
   await db.query(
     `
       insert into ingest_job_stage (
@@ -24,7 +25,7 @@ export async function updateStageStatus(params: {
         updated_at
       )
       values ($1, $2, $3, $4, $5, now())
-      on conflict (ingest_job_id, page_id, stage_name)
+      on conflict (ingest_job_id, coalesce(page_id, '00000000-0000-0000-0000-000000000000'::uuid), stage_name)
       do update set
         status = excluded.status,
         error_message = excluded.error_message,

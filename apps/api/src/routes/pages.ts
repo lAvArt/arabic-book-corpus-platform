@@ -21,7 +21,7 @@ const pagesRoutes: FastifyPluginAsync = async (fastify) => {
 
     return {
       pageId: page.id,
-      imagePath: page.storage_path,
+      imagePath: page.storagePath,
       // Future: signed URL from Supabase Storage with short TTL.
       signedUrl: null
     };

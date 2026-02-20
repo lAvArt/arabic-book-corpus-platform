@@ -3,6 +3,7 @@ import type {
   BookSummary,
   Citation,
   EditionSummary,
+  PageDetail,
   PassageDetail,
   ReleaseManifest,
   SearchHit
@@ -133,7 +134,7 @@ export async function searchBook(params: {
           p.id as passage_id,
           p.text_raw,
           ts_rank_cd(
-            to_tsvector('simple', p.text_normalized),
+            p.search_vector,
             plainto_tsquery('simple', $2)
           ) as score,
           s.id as source_id,
@@ -147,7 +148,7 @@ export async function searchBook(params: {
         join edition e on e.id = p.edition_id
         join source s on s.id = e.source_id
         where s.id = $1
-          and to_tsvector('simple', p.text_normalized) @@ plainto_tsquery('simple', $2)
+          and p.search_vector @@ plainto_tsquery('simple', $2)
       ),
       trigram_hits as (
         select
@@ -295,20 +296,20 @@ export async function getPassageById(passageId: string): Promise<PassageDetail |
   };
 }
 
-export async function getPageById(pageId: string): Promise<Record<string, unknown> | null> {
-  const rows = await query<Record<string, unknown>>(
+export async function getPageById(pageId: string): Promise<PageDetail | null> {
+  const rows = await query<PageDetail>(
     `
       select
         pi.id,
-        pi.volume_id,
-        pi.page_number,
-        pi.storage_path,
-        pi.image_sha256,
-        v.volume_number,
-        e.id as edition_id,
-        e.edition_name,
-        s.id as source_id,
-        s.title_ar
+        pi.volume_id as "volumeId",
+        pi.page_number as "pageNumber",
+        pi.storage_path as "storagePath",
+        pi.image_sha256 as "imageSha256",
+        v.volume_number as "volumeNumber",
+        e.id as "editionId",
+        e.edition_name as "editionName",
+        s.id as "sourceId",
+        s.title_ar as "sourceTitle"
       from page_image pi
       join volume v on v.id = pi.volume_id
       join edition e on e.id = v.edition_id

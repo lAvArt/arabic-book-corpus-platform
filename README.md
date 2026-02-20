@@ -1,6 +1,12 @@
 # Arabic Book Corpus Platform (v1 Scaffold)
 
-Standalone OCR-first platform for digitizing Arabic books (starting with `لسان العرب`) with citation-grade search APIs.
+Standalone OCR-first platform for digitizing Arabic books (starting with `Lisan al-Arab`) and serving citation-grade search APIs.
+
+Status: active scaffold. API, worker, and admin apps are in place; OCR providers are currently stubbed.
+
+## Keywords
+
+Arabic corpus, Arabic OCR, Lisan al-Arab, digital humanities, citation search, full-text search, Fastify, BullMQ, Postgres, MinIO, Supabase
 
 ## Scope
 
@@ -28,24 +34,22 @@ infra/
 
 ## Quick Start
 
-1. Copy `.env.example` to `.env` and adjust values.
-2. Install dependencies:
+Use the full setup guide: `docs/SETUP.md`
 
-   ```bash
-   pnpm install
-   ```
+Minimal quick start:
 
-3. Run database migration:
+1. Copy `.env.example` to `.env` (local scripts use `.env`; Docker Compose currently uses `.env.example`).
+2. Install dependencies: `pnpm install`.
+3. Run migration: `pnpm db:migrate`.
+4. Start services: `pnpm dev` or `docker compose up --build`.
 
-   ```bash
-   psql "$DATABASE_URL" -f infra/db/migrations/0001_init.sql
-   ```
+## Documentation
 
-4. Start local stack:
-
-   ```bash
-   docker compose up --build
-   ```
+- Setup: `docs/SETUP.md`
+- API: `docs/API.md`
+- Architecture: `docs/ARCHITECTURE.md`
+- Governance: `docs/GOVERNANCE.md`
+- Search gold set: `docs/GOLD_SET.md`
 
 ## API Endpoints (v1)
 
@@ -62,9 +66,17 @@ infra/
 - `POST /api/v1/ingest/jobs` (admin)
 - `GET /api/v1/ingest/jobs/:jobId` (admin)
 
+## Development
+
+- Install deps: `pnpm install`
+- Dev all services: `pnpm dev`
+- Build: `pnpm build`
+- Typecheck: `pnpm typecheck`
+- Test: `pnpm test`
+
 ## Auth Model
 
-- Admin UI: Supabase Auth session.
+- Admin UI: Supabase Auth session (or `x-dev-user-id` in non-production).
 - Public API: custom API keys (hashed at rest) via Fastify middleware.
 
 ## Search Model (v1)
@@ -76,5 +88,15 @@ infra/
 ## Governance
 
 - Curated maintainer-only ingestion.
-- Monthly release manifests + checksums.
+- Monthly release manifests plus checksums.
 - No publish without provenance metadata and QA pass.
+
+## Contributing and Security
+
+- Contributing guide: `CONTRIBUTING.md`
+- Security policy: `SECURITY.md`
+
+## License
+
+This repository is currently `UNLICENSED`.
+

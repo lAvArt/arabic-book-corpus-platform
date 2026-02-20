@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Setup Guide
+    url: https://github.com/lAvArt/arabic-book-corpus-platform/blob/main/docs/SETUP.md
+    about: Check local setup and verification steps before opening an issue.
+  - name: API Documentation
+    url: https://github.com/lAvArt/arabic-book-corpus-platform/blob/main/docs/API.md
+    about: Confirm endpoint behavior and auth expectations.
