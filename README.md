@@ -6,7 +6,7 @@ Status: active scaffold. API, worker, and admin apps are in place; OCR providers
 
 ## Keywords
 
-Arabic corpus, Arabic OCR, Lisan al-Arab, digital humanities, citation search, full-text search, Fastify, BullMQ, Postgres, MinIO, Supabase
+Arabic language corpus, Arabic OCR, Lisan al-Arab, lexicography, digital humanities, computational linguistics, citation search, full-text search, Fastify, Next.js, BullMQ, PostgreSQL, MinIO, Supabase
 
 ## Scope
 
