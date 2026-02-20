@@ -1,0 +1,8 @@
+app = "arabic-corpus-worker"
+primary_region = "iad"
+
+[build]
+  image = "node:22-alpine"
+
+[env]
+  NODE_ENV = "production"

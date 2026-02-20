@@ -1,0 +1,34 @@
+{
+  "name": "@arabic-corpus/ingest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "board": "tsx watch src/board.ts",
+    "enqueue": "tsx src/enqueue.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo \"No lint configured for @arabic-corpus/ingest\"",
+    "test": "echo \"No tests configured for @arabic-corpus/ingest\""
+  },
+  "dependencies": {
+    "@arabic-corpus/core": "workspace:*",
+    "@bull-board/api": "^6.7.10",
+    "@bull-board/fastify": "^6.7.10",
+    "bullmq": "^5.43.0",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "ioredis": "^5.4.2",
+    "pg": "^8.13.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/pg": "^8.11.11",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

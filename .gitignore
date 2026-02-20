@@ -1,0 +1,11 @@
+node_modules/
+.turbo/
+dist/
+coverage/
+.env
+.env.local
+.DS_Store
+.next/
+*.log
+tmp/
+pnpm-lock.yaml

@@ -1,0 +1,16 @@
+app = "arabic-corpus-api"
+primary_region = "iad"
+
+[build]
+  image = "node:22-alpine"
+
+[env]
+  NODE_ENV = "production"
+  API_PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1

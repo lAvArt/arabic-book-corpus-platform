@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans Arabic", "Noto Sans Arabic", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f7f4ea 0%, #e8e0c7 100%);
+  color: #1f1d17;
+}
+
+a {
+  color: inherit;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.sidebar {
+  background: #1f1d17;
+  color: #efe3c0;
+  padding: 24px;
+}
+
+.content {
+  padding: 28px;
+}
+
+.card {
+  background: #fffaf0;
+  border: 1px solid #d8cda8;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.scan-panel {
+  background: #ece1be;
+  border: 1px solid #c5b98d;
+  border-radius: 10px;
+  min-height: 420px;
+  position: relative;
+}
+
+.bbox {
+  position: absolute;
+  border: 2px solid #ca3d2b;
+  background: rgba(202, 61, 43, 0.18);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
