@@ -9,6 +9,8 @@
     "build": "tsc -p tsconfig.json",
     "dev": "tsx watch src/index.ts",
     "board": "tsx watch src/board.ts",
+    "start": "node dist/index.js",
+    "start:board": "node dist/board.js",
     "enqueue": "tsx src/enqueue.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "echo \"No lint configured for @arabic-corpus/ingest\"",

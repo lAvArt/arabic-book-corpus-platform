@@ -46,6 +46,7 @@ Minimal quick start:
 ## Documentation
 
 - Setup: `docs/SETUP.md`
+- Deployment: `docs/DEPLOYMENT.md`
 - API: `docs/API.md`
 - Architecture: `docs/ARCHITECTURE.md`
 - Governance: `docs/GOVERNANCE.md`
