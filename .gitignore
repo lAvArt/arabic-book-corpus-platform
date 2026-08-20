@@ -10,3 +10,28 @@ coverage/
 tmp/
 pnpm-lock.yaml
 *.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# Source books and anything derived from them.
+#
+# This repo is PUBLIC. The books being digitised are third-party copyrighted
+# works (Jabal d.2015, Abd al-Baqi d.1968, al-Askari). Committing a scan, or
+# text extracted from one, publishes it. Keep both out until licensing is
+# settled for a specific work.
+# ---------------------------------------------------------------------------
+*.pdf
+!docs/**/*.pdf
+books/
+scans/
+.lexicon-cache/
+.ocr-cache/
+dataset*.zip
+*-meanings.json
+*-glosses.json
+
+# Python sidecar (workers/ocr-py)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/

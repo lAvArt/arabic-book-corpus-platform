@@ -1,0 +1,5 @@
+# Pinned loosely: these are the versions the tooling was verified against.
+pymupdf>=1.24        # page render, ToUnicode CMap access, PDF assembly
+pillow>=10.0         # image degradation for synthetic training data
+numpy>=1.26          # projection-profile line segmentation
+google-genai>=2.3.0  # Gemini backend (optional; Mistral backend needs no SDK)
